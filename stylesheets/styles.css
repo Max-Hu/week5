@@ -1,0 +1,48 @@
+body {
+  margin: 30px;
+  /*background-image: url("../img/bg.jpg");*/
+  background-color: #fff;
+  /*background-repeat: no-repeat;
+  filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+-moz-background-size:100% 100%;
+    background-size:100% 100%;*/
+    font-family: "Metallophile", "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.divframe{
+   border:1px solid #999;
+   width:500px;
+   margin:0 auto;
+}
+
+.loadTitle{
+   /*background:#E6E3E3;*/
+   height:70px;
+}
+
+.search{
+height:27px;
+width: 95%;
+font-size: 17px;
+margin-left: 2%;
+margin-top: 10px;
+}
+
+.contant{
+  margin-left: 1%;
+}
+
+.title{
+  margin-top: 1.3%;
+  font-size: 19px;
+}
+
+.time{
+  text-align: right;
+  color: #ccc;
+  font-size: 15px;
+}
+
+.hr{
+  border : 1px dashed #ccc;
+}
