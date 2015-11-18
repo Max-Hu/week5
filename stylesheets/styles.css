@@ -46,3 +46,8 @@ margin-top: 10px;
 .hr{
   border : 1px dashed #ccc;
 }
+mark {
+  background-color:#ef5ba1;
+  font-weight:bold;
+  color: #fff;
+   }
