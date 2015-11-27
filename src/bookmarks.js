@@ -36,8 +36,13 @@ $(function(){
       });
 
       function getRealTime(time) {
-        var myDate = new Date( time *1000);
-        return myDate.toLocaleString();
+        var time = new Date( time *1000);
+        var year = time.getFullYear();
+        var month = time.getMonth() + 1;
+        month = month > 10 ? month : '0' + month;
+        var day = time.getDay();
+        day = day > 10 ? day : '0' + day;
+        return year + '-' + month + '-' + day;
       }
 
       function createHtml(title,realtime) {
