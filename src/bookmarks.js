@@ -47,7 +47,7 @@ $(function(){
 
       function createHtml(title,realtime) {
         var strHtml = "";
-        strHtml +="<div class='out'>";
+        strHtml +="<div id='out'>";
         strHtml += "<div class=\'title\' id = \'outtitle\'>"+title+"</div>";
         strHtml += "<div class=\'time\'>"+"Created @ "+realtime+"</div>";
         strHtml +="</div>";
