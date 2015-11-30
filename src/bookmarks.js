@@ -16,24 +16,23 @@ $(function(){
         var value = $(this).val();
         $jsontip.empty();
         $.getJSON("data/bookmarks.json",function(data){
+            var searchData = _.filter(data, function(object){ return object["title"].toLowerCase().indexOf(value.toLowerCase()) !=-1; });
             var strHtml = "";
-            $.each(lowerCase,function(infoIndex,info){
-                if (info["title"].indexOf(value.toLowerCase()) !=-1) {
+            $.each(searchData,function(infoIndex,info){
                     var realtime = getRealTime(info["created"]);
-                    var title = createHightLight();
+                    var title = createHighLightTitle(info["title"],value);
                     strHtml += createHtml(title,realtime);
-                    function createHightLight() {
-                      var position = info["title"].indexOf(value.toLowerCase());
-                      var defaultTitle = data[infoIndex].title;
-                      var title =  defaultTitle.substring(0,position) + "<mark>";
-                      title +=defaultTitle.substring(position,position+value.length) + "</mark>";
-                      return title += defaultTitle.substring(position+value.length,data[infoIndex].length);
-                    }
-                }
               })
               $jsontip.html(strHtml);
       });
       });
+
+      function createHighLightTitle(title,input) {
+          var position = title.toLowerCase().indexOf(input.toLowerCase());
+          var result =  title.substring(0,position) + "<mark>";
+          result +=title.substring(position,position+input.length) + "</mark>";
+          return result += title.substring(position+input.length,title.length);
+      }
 
       function getRealTime(time) {
         var time = new Date( time *1000);
