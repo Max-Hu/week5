@@ -1,5 +1,4 @@
 $(function(){
-    var lowerCase = new Array();
     var $jsontip = $("#jsonTip");
     $.getJSON("data/bookmarks.json",function(data){
         $jsontip.empty();
@@ -7,7 +6,6 @@ $(function(){
         $.each(data,function(infoIndex,info){
             var realtime = getRealTime(info["created"] );
             strHtml += createHtml(info["title"],realtime)
-            pushLowCase(info,lowerCase);
           })
           $jsontip.html(strHtml);
       });
@@ -52,12 +50,5 @@ $(function(){
         strHtml +="</div>";
         strHtml += "<hr class=\'hr\'>"
         return strHtml;
-      }
-
-      function pushLowCase(info,lowerCase) {
-        info = _.mapObject(info, function(val, key) {
-            return val.toLowerCase();
-        });
-        lowerCase.push(info);
       }
 })
